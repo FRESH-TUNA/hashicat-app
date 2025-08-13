@@ -55,11 +55,11 @@ cat << EOM > /var/www/html/index.html
 
       <!-- BEGIN -->
       <div class="header">
-        <img src="http://%{PLACEHOLDER}/%{WIDTH}/%{HEIGHT}" alt="Cat Image">
+        <img src="http://${PLACEHOLDER}/${WIDTH}/${HEIGHT}" alt="Cat Image">
         <div class="title">Meow World!</div>
       </div>
       <div class="content">
-        Welcome to tuuuuuuna %{PREFIX}'s app. Replace this text with your own.
+        Welcome to tuuuuuuna ${PREFIX}'s app. Replace this text with your own.
       </div>
       <!-- END -->
 
