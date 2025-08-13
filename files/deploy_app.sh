@@ -6,17 +6,64 @@
 
 cat << EOM > /var/www/html/index.html
 <html>
-  <head><title>Meow!</title></head>
+  <head>
+    <title>Meow!</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .container {
+        width: 800px;
+        margin: 50px auto;
+        background-color: #ffffff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .header {
+        background-color: #ffcccb;
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      .header img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .title {
+        font-size: 32px;
+        margin-top: 20px;
+        color: #444;
+      }
+
+      .content {
+        padding: 20px;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
   <body>
-  <div style="width:800px;margin: 0 auto">
+    <div class="container">
 
-  <!-- BEGIN -->
-  <center><img src="http://${PLACEHOLDER}/${WIDTH}/${HEIGHT}"></img></center>
-  <center><h2>Meow World!</h2></center>
-  Welcome to tuuuuuuna ${PREFIX}'s app. Replace this text with your own.
-  <!-- END -->
+      <!-- BEGIN -->
+      <div class="header">
+        <img src="http://%{PLACEHOLDER}/%{WIDTH}/%{HEIGHT}" alt="Cat Image">
+        <div class="title">Meow World!</div>
+      </div>
+      <div class="content">
+        Welcome to tuuuuuuna %{PREFIX}'s app. Replace this text with your own.
+      </div>
+      <!-- END -->
 
-  </div>
+    </div>
   </body>
 </html>
 EOM
